@@ -1,3 +1,14 @@
-<h1>
-  {{title}}
-</h1>
+<div id="div1"
+	(click)="divClicked = !divClicked"
+	[ngClass]="{marked: divClicked}"
+	[ngStyle]="{backgroundColor: divClicked ? 'red' : 'blue'}">
+	
+</div>
+<br>
+<hr>
+<br>
+<div id="div2"
+	(click)="doAnimate = !doAnimate"
+	[ngClass]="{animate: doAnimate}">
+	
+</div>
