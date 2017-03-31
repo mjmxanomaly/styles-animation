@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { clickedStateTrigger, numberEnteredStateTrigger } from './animations';
+import { clickedStateTrigger, numberEnteredStateTrigger, showStateTrigger, listStateTrigger, animateStateTrigger } from './animations';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +7,10 @@ import { clickedStateTrigger, numberEnteredStateTrigger } from './animations';
   styleUrls: ['./app.component.scss'],
   animations: [
   	clickedStateTrigger,
-  	numberEnteredStateTrigger
+  	numberEnteredStateTrigger,
+  	showStateTrigger,
+  	listStateTrigger,
+  	animateStateTrigger
   ]
 })
 export class AppComponent {
@@ -16,11 +19,19 @@ export class AppComponent {
   clickInfo = 'default';
   paragraphClick = 'default';
   numberEntered;
+  isShown = false;
+  width = 400;
+  animate = false;
+  testResults = [];
 
   	onClickSimple() {
   		this.clickInfo = 'clicked';
   		setTimeout(() => {
   			this.clickInfo = 'default';
   		}, 3000);
+  	}
+
+  	onAddElement() {
+  		this.testResults.push(Math.random());
   	}
 }
