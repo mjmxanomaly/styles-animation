@@ -34,4 +34,11 @@ export class AppComponent {
   	onAddElement() {
   		this.testResults.push(Math.random());
   	}
+
+  	onAnimationStarted(event: AnimationEvent) {
+  		console.log(event);
+  	}
+  	onAnimationDone(event: AnimationEvent) {
+  		console.log(event);
+  	}
 }
